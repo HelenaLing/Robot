@@ -210,11 +210,9 @@ while True:
 		print(usLeft.value(), usRight.value())
 		new_action(False, [(-80, -80, 10)])
 	else :
-		if usLeft.value() <= 130 and servoRunCount < 10:
+		if usLeft.value() <= 130 and servoRunCount < 1:
 			servoRunCount += 1
-			servo_action(True, [(-100, 0.5)])
-		elif servoRunCount > 0 :
-			servo_action(True, [(100, 0.5)])
+			servo_action(True, [(-100, 3)])
 		new_action(True, [(-50, -50, 10)])
 """
 	# If the left touch sensor makes contact, stop the current motor thread
