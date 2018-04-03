@@ -212,8 +212,11 @@ while True:
 	else :
 		if usLeft.value() <= 130 and servoRunCount < 1:
 			servoRunCount += 1
-			servo_action(True, [(-100, 3)])
-		new_action(True, [(-50, -50, 10)])
+			servo_action(True, [(-100, 2)])
+			sleep(2)
+		elif servoRunCount > 0:
+			servo_action(False, [(0, 100)])
+			new_action(True, [(-50, -50, 10)])
 """
 	# If the left touch sensor makes contact, stop the current motor thread
 	# and start backin up. The action list tells the robot to reverse at
